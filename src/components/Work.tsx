@@ -1,0 +1,30 @@
+import { caseStudies } from '../content'
+
+export function Work() {
+  return (
+    <section id="work">
+      <h2 className="sr">Selected work</h2>
+
+      {caseStudies.map((study) => (
+        <article className="case sr" key={study.title}>
+          <div className="kicker">
+            {study.kicker[0]}
+            <br />
+            {study.kicker[1]}
+          </div>
+          <div>
+            <h3>{study.title}</h3>
+            <p>{study.body}</p>
+            <div className="tags">
+              {study.tags.map((tag) => (
+                <span className="tag" key={tag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </section>
+  )
+}

@@ -18,3 +18,13 @@ node_modules/
 .env.*
 *.log
 npm-debug.log*
+
+# Build output
+dist/
+dist-ssr/
+*.local
+*.tsbuildinfo
+
+# VS Code (keep shared extension recommendations only)
+.vscode/*
+!.vscode/extensions.json
