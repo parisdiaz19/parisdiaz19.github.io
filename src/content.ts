@@ -8,22 +8,21 @@ export const site = {
   email: "parisdiaz719@gmail.com",
   github: "https://github.com/parisdiaz19",
   linkedin: "https://www.linkedin.com/in/parisdiaz/",
-  location: "Hackensack, NJ · NYC metro",
+  location: "Hackensack, NJ · NYC",
   copyrightYear: 2026,
 };
 
 export const navLinks = [
   { label: "Work", href: "#work" },
   { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export const hero = {
   // The headline is split into three parts so <em> can wrap the emphasised word.
-  headlineBefore: "I build e-commerce interfaces that feel ",
-  headlineEmphasis: "engineered",
-  headlineAfter: ", not assembled.",
-  sub: "Frontend engineer with deep experience in React, TypeScript, and design systems — currently shipping the storefront experiences for Nespresso USA. I care about the last 10%: motion that clarifies, accessibility that holds up, and component APIs other developers actually enjoy using.",
+  headlineBefore: "I make the front end the part nobody has to ",
+  headlineEmphasis: "worry about",
+  headlineAfter: ".",
+  sub: "I used to do that with a violin, professionally. These days it's React and TypeScript: five years across agency work and high-traffic consumer products, currently at Nespresso USA, mostly on design systems, motion, and making the accessible path the default one.",
   primaryCta: "Get in touch",
   secondaryCta: "See selected work",
 };
@@ -49,27 +48,60 @@ export interface CaseStudy {
   tags: string[];
   /** Public page where the work can be seen in production. */
   link?: { href: string; label: string };
+  /** Short muted looping clip shown under the write-up. Files live in public/media. */
+  media?: CaseStudyMedia;
+}
+
+export interface CaseStudyMedia {
+  /** Path relative to public/, e.g. "media/vertuo-world.mp4" */
+  src: string;
+  /** Optional still frame shown before playback and for reduced-motion users. */
+  poster?: string;
+  /** Plain-language description for screen readers. */
+  alt: string;
 }
 
 export const caseStudies: CaseStudy[] = [
   {
     kicker: ["Nespresso USA", "Motion & interaction"],
-    title: "Machine Discovery carousel",
-    body: "Designed and built an immersive product-discovery experience for espresso machines: a winged carousel of compact machine cards where any slide morphs seamlessly into a fullscreen detail view using GSAP Flip. Shipped with a custom Safari scroll-restoration fix and full keyboard support.",
-    tags: ["React", "TypeScript", "GSAP", "Accessibility"],
+    title: "Vertuo World",
+    body: "Nespresso's immersive showcase for the Vertuo system. I built its centerpiece, the Machine Discovery carousel: a winged carousel of compact machine cards where any slide morphs into a fullscreen detail view using GSAP Flip, shipped with a custom Safari scroll-restoration fix and full keyboard support. I also assisted with the Hero and collaboration section of the page.",
+    tags: [
+      "React",
+      "TypeScript",
+      "GSAP",
+      "Design Architecture",
+      "Accessibility",
+    ],
     link: {
       href: "https://www.nespresso.com/us/en/explore-vertuo-technology",
-      label: "See it live in Vertuo World",
+      label: "See it live on nespresso.com",
+    },
+    media: {
+      src: "media/vertuo-world.mp4",
+      poster: "media/vertuo-world.jpg",
+      alt: "Screen recording of the Machine Discovery carousel in Vertuo World.",
     },
   },
   {
     kicker: ["Nespresso USA", "Product architecture"],
-    title: "QuickView tray system",
+    title: "QuickView Tray System",
     body: "Built a provider-driven quick-view tray that lets shoppers configure products — colors, images, accessories — without leaving the listing page. Context-based architecture with composable sub-components that other teams extended without touching core logic.",
-    tags: ["React Context", "Compound components", "E-commerce UX"],
+    tags: [
+      "React",
+      "TypeScript",
+      "React Context",
+      "Compound components",
+      "E-commerce UX",
+    ],
     link: {
       href: "https://www.nespresso.com/us/en/vertuo-coffee-machines",
       label: "See it live on the machine listing page",
+    },
+    media: {
+      src: "media/machine-listing-page.mp4",
+      poster: "media/machine-listing-page.jpg",
+      alt: "Screen recording of the QuickView tray on the Nespresso machine listing page.",
     },
   },
   {
@@ -101,10 +133,12 @@ export const skillGroups: SkillGroup[] = [
   {
     heading: "Core",
     items: [
-      "React & TypeScript",
+      "React/TypeScript",
+      "React Context",
       "styled-components / CSS architecture",
       "Vite, NX monorepos",
       "Design systems & component APIs",
+      "Violin!",
     ],
   },
   {
@@ -113,7 +147,8 @@ export const skillGroups: SkillGroup[] = [
       "GSAP & interaction design",
       "Accessibility (ARIA patterns)",
       "Testing (Jest, Testing Library)",
-      "Performance & SEO (JSON-LD)",
+      "Performance & SEO/AEO/GEO",
+      "Design Architecture",
     ],
   },
   {
@@ -135,13 +170,25 @@ export interface Job {
 
 export const jobs: Job[] = [
   {
-    role: "Frontend Developer",
-    org: "Nespresso USA (Nestlé) — Digital Commerce Web Development · [Year] – Present",
+    role: "Frontend Software Engineer",
+    org: "Nespresso USA (Nestlé) — Digital Commerce Web Development · July 2024 – Present",
     bullets: [
       "Own frontend delivery across major storefront surfaces: coffee and machine listing pages, homepage, collaboration campaigns, and brand experiences.",
       "Core contributor to the internal design system powering every US storefront app — typography, color systems, hooks, and shared components.",
       "Ship motion-rich, accessible product experiences (GSAP animation systems, ARIA-compliant components) in a large NX monorepo.",
       "Built subscribe-and-save purchase flows, cart integrations, and structured-data systems that directly support revenue and SEO.",
+    ],
+  },
+  {
+    role: "Enterprise Web Developer",
+    org: "Scorpion · Remote (Santa Clarita, CA) · Jan 2021 – Jun 2024",
+    bullets: [
+      "Spearheaded the development of responsive, functional, and visually appealing websites using modern technologies such as React.js and Next.js.",
+      "Led initiatives to optimize website performance, implementing lazy loading, jQuery removal, JavaScript minification, and stylesheet optimization.",
+      "Achieved a 45% reduction in page load times, reflected in improved Google PageSpeed scores.",
+      "Implemented enhancements for the proprietary CMS and client websites, introducing modern frontend technologies, refining user interfaces, and optimizing workflows.",
+      "Led close collaboration with the Integrations team to guarantee seamless integration of frontend components with various backend services.",
+      "Communicated with designers and marketing managers on website concept, design, and structure to ensure the best results and performance for clients.",
     ],
   },
 ];

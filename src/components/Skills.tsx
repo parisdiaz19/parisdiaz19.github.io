@@ -1,9 +1,9 @@
-import { skillGroups } from '../content'
+import { skillGroups } from "../content";
 
 export function Skills() {
   return (
     <section id="skills">
-      <h2 className="sr">What I work with</h2>
+      <h2 className="sr">The tools I work with</h2>
       <div className="skills-grid">
         {skillGroups.map((group) => (
           <div className="sr" key={group.heading}>
@@ -17,5 +17,5 @@ export function Skills() {
         ))}
       </div>
     </section>
-  )
+  );
 }

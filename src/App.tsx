@@ -21,8 +21,8 @@ export default function App() {
       </div>
       <div className="wrap">
         <Skills />
-        <Work />
         <Experience />
+        <Work />
         <Footer />
       </div>
     </div>

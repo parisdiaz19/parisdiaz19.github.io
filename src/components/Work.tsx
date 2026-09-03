@@ -1,4 +1,5 @@
 import { caseStudies } from '../content'
+import { CaseMedia } from './CaseMedia'
 
 export function Work() {
   return (
@@ -15,6 +16,7 @@ export function Work() {
           <div>
             <h3>{study.title}</h3>
             <p>{study.body}</p>
+            {study.media && <CaseMedia media={study.media} />}
             <div className="tags">
               {study.tags.map((tag) => (
                 <span className="tag" key={tag}>

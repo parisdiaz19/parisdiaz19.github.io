@@ -1,11 +1,11 @@
-import { site } from '../content'
+import { site } from "../content";
 
 export function Footer() {
   return (
     <footer>
       <div>
-        © {site.copyrightYear} {site.name} · Built by hand, no template
+        © {site.copyrightYear} {site.name}
       </div>
     </footer>
-  )
+  );
 }
