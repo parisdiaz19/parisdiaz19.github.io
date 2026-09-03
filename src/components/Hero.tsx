@@ -1,4 +1,4 @@
-import { hero, site } from '../content'
+import { hero, site } from "../content";
 
 /**
  * Splits text into word spans for the staggered headline reveal.
@@ -9,16 +9,16 @@ function Words({ text }: { text: string }) {
   return (
     <>
       {text.split(/(\s+)/).map((piece, i) => {
-        if (piece === '') return null
-        if (/^\s+$/.test(piece)) return ' '
+        if (piece === "") return null;
+        if (/^\s+$/.test(piece)) return " ";
         return (
           <span className="word" key={i}>
             <span>{piece}</span>
           </span>
-        )
+        );
       })}
     </>
-  )
+  );
 }
 
 export function Hero() {
@@ -37,14 +37,17 @@ export function Hero() {
       <p className="meta" data-hero="">
         {site.location}
       </p>
-      <div className="links" data-hero="">
-        <a className="btn btn-primary" data-magnetic="" href={`mailto:${site.email}`}>
-          {hero.primaryCta}
+      <div className="links sr">
+        <a className="btn btn-primary" href={`mailto:${site.email}`}>
+          {site.email}
         </a>
-        <a className="btn btn-ghost" data-magnetic="" href="#work">
-          {hero.secondaryCta}
+        <a className="btn btn-ghost" href={site.github} rel="noopener">
+          GitHub
+        </a>
+        <a className="btn btn-ghost" href={site.linkedin} rel="noopener">
+          LinkedIn
         </a>
       </div>
     </header>
-  )
+  );
 }

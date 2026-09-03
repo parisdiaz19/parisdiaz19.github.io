@@ -22,6 +22,16 @@ export function Work() {
                 </span>
               ))}
             </div>
+            {study.link && (
+              <a
+                className="case-link"
+                href={study.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {study.link.label} ↗
+              </a>
+            )}
           </div>
         </article>
       ))}
